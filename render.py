@@ -71,8 +71,9 @@ class Renderer(object):
 		plt.ylim(- 1.1 * robot_length, 1.1 * robot_length)
 		plt.xlim(- 1.1 * robot_length, 1.1 * robot_length)
 		# Add goal marker to plot
+		goal = robot.goal
 		if goal is not None:
-			goal = robot.goal.reshape(-1)
+			goal = goal.reshape(-1)
 			plt.plot(goal[0], goal[1], 'x', color=color)
 
 		for i in range(0, num_links):
