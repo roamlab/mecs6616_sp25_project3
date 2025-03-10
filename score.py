@@ -321,9 +321,10 @@ def score_mpc_true_dynamics(controller, gui):
                   print('score:', '0/1.5')
                 else:
                   print('score:', '0/1.0')
+    score = (score / 7.5) * 5
     print("       ")
     print("-------------------------")
-    print("Part 1 SCORE: ", f"{score}/7.5")
+    print("Part 1 SCORE: ", f"{score}/5")
     print("-------------------------")
 
     if renderer is not None:
@@ -389,9 +390,10 @@ def score_mpc_learnt_dynamics(controller, arm_student, model_path, gui):
             else:
                 print(f'Fail :(\n Goal: {GOALS[num_links][i].reshape(-1)}, Final position: {pos_ee.reshape(-1)}, Final velocity: {vel_ee.reshape(-1)}')
                 print('score:', '0/0.5')
+    score = (score / 7.5) * 5
     print("       ")
     print("-------------------------")
-    print("Part 2 SCORE: ", f"{min(score, 7.5)}/7.5")
+    print("Part 2 SCORE: ", f"{min(score, 5)}/5")
     print("-------------------------")
 
     if renderer is not None:
