@@ -44,7 +44,7 @@ def score_random_torque(arm_teacher, arm_student, gui):
 
     mses = []
     scores = []
-    torques = np.random.uniform(-1.5, 1.5, num_tests)
+    torques = np.random.uniform(-1.0, 1.0, num_tests) # changed range from [-1.5, 1.5] to [-1.0, 1.0]
     for i, torque in enumerate(torques):
         print("\n----------------------------------------")
         print(f'TEST {i+1} (Torque = {torque} Nm)\n')
@@ -90,7 +90,7 @@ def score_linear_torques(arm_teacher, arm_student, gui):
 
     mses = []
     scores = []
-    torques = np.random.uniform(0.5, 1.5, num_tests)
+    torques = np.random.uniform(0.5, 1.0, num_tests) # changed 1.5 to 1.0
     for i, torque in enumerate(torques):
         print("\n----------------------------------------")
         print(f'TEST {i+1} (Torque 0 -> {torque} Nm)\n')
